@@ -95,6 +95,7 @@
   flex-direction: row-reverse;
   justify-content: flex-end;
   gap: 1rem;
+  flex-wrap: wrap;
   margin-bottom: 3rem;
 }
 
