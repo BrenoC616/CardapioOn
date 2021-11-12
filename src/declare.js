@@ -11,27 +11,27 @@ addMenuItem(
   "X-Tudo",
   "19",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, incidunt?",
-  "./img/xSalada.jpeg",
+  "./src/img/xSalada.jpeg",
   "xBurgersCategory"
 );
 addMenuItem(
   "X-Salada",
   "15",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, incidunt?",
-  "./img/xSalada.jpeg",
+  "./src/img/xSalada.jpeg",
   "xBurgersCategory"
 );
 addMenuItem(
   "X-Bacon",
   "14",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, incidunt?",
-  "./img/xSalada.jpeg",
+  "./src/img/xSalada.jpeg",
   "xBurgersCategory"
 );
 addMenuItem(
   "X-Diet",
   "20",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, incidunt?",
-  "./img/xSalada.jpeg",
+  "./src/img/xSalada.jpeg",
   "dietBurgersCategory"
 );
