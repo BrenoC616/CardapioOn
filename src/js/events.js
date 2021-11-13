@@ -1,3 +1,17 @@
+const updateRequestList = (
+  id,
+  itemName,
+  productTotalRequestElement,
+  productCountValue
+) => {
+  requestItens[`${id}`] = {
+    itemName: `${itemName}`,
+    totalValue: `${productTotalRequestElement}`,
+    itensQuantity: `${productCountValue}`,
+  };
+  console.log(requestItens)
+};
+
 const updateValueDisplay = (id, productCountValue) => {
   let productTotalRequestElement = document.getElementById(`total${id}`);
 
@@ -7,6 +21,16 @@ const updateValueDisplay = (id, productCountValue) => {
   productTotalRequestElement.innerText = `${
     productCountValue * productTotalPriceValue
   }`;
+
+  let itemName = document.getElementById(`item${id}`).children[1].children[0]
+    .innerText;
+
+  updateRequestList(
+    id,
+    itemName,
+    productTotalRequestElement.innerText,
+    productCountValue
+  );
 };
 
 const plusOne = (id) => {

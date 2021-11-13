@@ -8,6 +8,7 @@ export const addMenuItem = (addname, value, description, image, category) => {
     "afterbegin",
     prodCardElement(addname, value, description, image, idCount)
   );
+  requestItens[idCount] = {};
   idCount++;
 };
 
