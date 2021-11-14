@@ -1,3 +1,36 @@
+let requestItens = {};
+
+const showRequestListPopup = () => {
+  backgroundPopupStyle = document.querySelector(".background-popup").style;
+  headerStyle = document.querySelector(".header").style;
+  productsCategoryStyle = document.querySelector(".products-category").style;
+
+  backgroundPopupStyle.backgroundColor = "rgba(0, 0, 0, 0.95)";
+  headerStyle.position = "relative";
+  headerStyle.zIndex = "-1";
+  productsCategoryStyle.position = "relative";
+  productsCategoryStyle.zIndex = "-2";
+  document.body.style.overflowY = "hidden";
+
+  document
+    .querySelector(".background-popup")
+    .insertAdjacentHTML("afterbegin", popupElement());
+
+  let itensTotalValue = 0;
+
+  for (let i = 0; i < Object.keys(requestItens).length; i++) {
+    if (
+      requestItens[i].itemName != undefined &&
+      requestItens[i].itensQuantity != 0
+    ) {
+      requestItensListContent.innerHTML += `${requestItens[i].itemName} R$${requestItens[i].totalValue} - Qtd: ${requestItens[i].itensQuantity}<br>`;
+      itensTotalValue += Number(requestItens[i].totalValue);
+    }
+  }
+
+  requestTotalValue.innerHTML = `R$${itensTotalValue}`;
+};
+
 const updateRequestList = (
   id,
   itemName,
@@ -9,7 +42,6 @@ const updateRequestList = (
     totalValue: `${productTotalRequestElement}`,
     itensQuantity: `${productCountValue}`,
   };
-  console.log(requestItens)
 };
 
 const updateValueDisplay = (id, productCountValue) => {
@@ -57,3 +89,5 @@ const minusOne = (id) => {
 
   updateValueDisplay(id, productCountValue);
 };
+
+requestButton.addEventListener("click", showRequestListPopup)

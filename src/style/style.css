@@ -31,11 +31,83 @@
   transition: all 0.5s;
 }
 
+.popup-container {
+  color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+
+}
+
+.popup-card {
+  font-family: var(--font-primary);
+  background-color: var(--main-primary-color);
+  width: max(35vw, 21.875rem);
+  padding: 1.5rem;
+  border-radius: 0.7rem;
+}
+
+.popup-card > h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.popup-card > input {
+  width: 90%;
+  height: 1.5rem;
+  padding: 0.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.popup-card > h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.popup-card > #requestItensListContent,
+.popup-card > #requestTotalValue {
+  margin-bottom: 1rem;
+}
+
+.popup-card > #requestTotalValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.popup-card > button {
+  width: 35%;
+  color: white;
+  background-color: var(--btn-primary-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.65rem;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.popup-card > button:hover {
+  background-color: var(--btn-hover-primary-color);
+  transition: 150ms;
+}
+
+.popup-card > button:active {
+  color: var(--main-primary-color);
+  background-color: rgb(168, 161, 197);
+}
+
 .header {
   color: azure;
   background-color: var(--main-primary-color);
   font-family: var(--font-primary);
-  font-size: 2.5rem;
   font-weight: 700;
   height: 4.5rem;
   width: 100%;
@@ -49,6 +121,10 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
+}
+
+.header > .container > .logo{
+  font-size: min(2.5rem, 7vw);
 }
 
 .header > .container > .logo a {
@@ -208,4 +284,21 @@
 
 .footer > .container > span a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1280px) {
+  .category {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 910px) {
+  .category {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .product-card {
+    width: min(25rem, 70vw);
+  }
 }

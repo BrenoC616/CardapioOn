@@ -20,7 +20,7 @@
       <header class="header">
         <div class="container">
           <span class="logo"><a href="https://gabrieldsrodrigues.github.io/CardapioOn/" target="_blank">CardápioOn</a></span>
-          <button id="requestButton" onclick="">
+          <button id="requestButton">
             Realizar Pedido
           </button>
         </div>
@@ -41,7 +41,24 @@
       </footer>
     </div>
     <script>
-      let requestItens = {};
+      const popupElement = () => {
+        let popup = 
+          `
+          <div class="popup-container">
+            <div class="popup-card">
+              <h2>Seu Pedido</h2>
+              <h3>Itens</h3>
+              <div id="requestItensListContent">
+              </div>
+              <h3>Total</h3>
+              <div id="requestTotalValue"></div>
+              <input type="text" placeholder="Seu Endereço"></input>
+              <button>Pedir Agora!</button>
+            </div>
+          </div>
+          `;
+        return popup;
+      }
     </script>
     <script type="module" src="./src/js/main.js"></script>
     <script type="module" src="./src/declare.js"></script>
