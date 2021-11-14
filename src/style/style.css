@@ -1,10 +1,17 @@
+/* Variables */
 :root {
-  --main-primary-color: rgb(72, 61, 139);
-  --btn-primary-color: rgb(121, 110, 179);
-  --btn-hover-primary-color: rgb(108, 97, 156);
-  --font-primary: "Roboto", Arial, sans-serif;
+  --hue: 262;
+  --main-primary-color: hsl(var(--hue), 70%, 55%);
+  --btn-primary-color: hsl(var(--hue), 50%, 40%);
+  --btn-hover-primary-color: hsl(var(--hue), 50%, 30%);
+  --btn-active-primary-color: hsl(var(--hue), 80%, 80%);
+  --shadow-primary-color: hsla(var(--hue), 60%, 60%, 0.5);
+  --shadow-secondary-color: hsla(0, 0%, 0%, 0.235);
+  --font-primary-color: hsl(0, 0%, 100%);
+  --font-primary: "Open Sans", Arial, sans-serif;
 }
 
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -26,13 +33,42 @@
   border: 3px solid white;
 }
 
+body {
+  color: var(--font-primary-color);
+  font-family: var(--font-primary);
+}
+
+button {
+  color: var(--font-primary-color);
+}
+
+button:hover {
+  background-color: var(--btn-hover-primary-color) !important;
+  cursor: pointer;
+  transition: 150ms;
+}
+
+button:active {
+  color: var(--main-primary-color);
+  background-color: var(--btn-active-primary-color) !important;
+}
+
+a {
+  color: var(--font-primary-color);
+  text-decoration: none;
+}
+
+input {
+  background-color: var(--font-primary-color);
+}
+
+/* Popup Styles */
 .background-popup {
   width: 100%;
   transition: all 0.5s;
 }
 
 .popup-container {
-  color: white;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -40,11 +76,9 @@
   align-items: center;
   position: absolute;
   z-index: 1;
-
 }
 
 .popup-card {
-  font-family: var(--font-primary);
   background-color: var(--main-primary-color);
   width: max(35vw, 21.875rem);
   padding: 1.5rem;
@@ -85,7 +119,6 @@
 
 .popup-card > button {
   width: 35%;
-  color: white;
   background-color: var(--btn-primary-color);
   font-size: 0.9rem;
   font-weight: 600;
@@ -94,24 +127,13 @@
   border-radius: 0.3rem;
 }
 
-.popup-card > button:hover {
-  background-color: var(--btn-hover-primary-color);
-  transition: 150ms;
-}
-
-.popup-card > button:active {
-  color: var(--main-primary-color);
-  background-color: rgb(168, 161, 197);
-}
-
+/* Header Styles */
 .header {
-  color: azure;
   background-color: var(--main-primary-color);
-  font-family: var(--font-primary);
   font-weight: 700;
   height: 4.5rem;
   width: 100%;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.235);
+  box-shadow: 0px 5px 10px var(--shadow-secondary-color);
 }
 
 .header > .container {
@@ -127,15 +149,9 @@
   font-size: min(2.5rem, 7vw);
 }
 
-.header > .container > .logo a {
-  color: white;
-  text-decoration: none;
-}
-
 .header > .container > button {
   width: 12rem;
   height: 60%;
-  color: white;
   background-color: var(--btn-primary-color);
   font-size: 0.95rem;
   font-weight: 600;
@@ -144,16 +160,7 @@
   border-radius: 0.45rem;
 }
 
-.header > .container > button:hover {
-  background-color: var(--btn-hover-primary-color);
-  transition: 150ms;
-}
-
-.header > .container > button:active {
-  color: var(--main-primary-color);
-  background-color: rgb(168, 161, 197);
-}
-
+/* Product Category Styles */
 .products-category {
   text-align: center;
   padding: 2rem;
@@ -161,11 +168,11 @@
 
 .products-category > div > h2 {
   color: var(--main-primary-color);
-  font-family: var(--font-primary);
   font-size: 2rem;
   margin: 1.3rem 0;
 }
 
+/* Category Styles */
 .category {
   display: flex;
   flex-direction: row-reverse;
@@ -175,14 +182,13 @@
   margin-bottom: 3rem;
 }
 
+/* Product Card Styles */
 .product-card {
-  font-family: var(--font-primary);
-  color: white;
   background-color: var(--main-primary-color);
   width: 15rem;
   padding: 1rem;
   border-radius: 0.85rem;
-  box-shadow: 0px 4px 15px rgba(105, 89, 209, 0.5);
+  box-shadow: 0px 4px 15px var(--shadow-primary-color);
 }
 
 .product-image {
@@ -221,13 +227,12 @@
   justify-content: space-between;
   height: 2rem;
   padding: 0.3rem;
-  border: 0.125rem solid rgba(255, 255, 255, 0.5);
+  border: 0.125rem solid hsla(0, 0%, 100%, 0.5);
   border-radius: 0.55rem;
 }
 
 .product-toolbar > input {
   color: var(--main-primary-color);
-  background-color: aliceblue;
   font-size: 1.35rem;
   font-weight: 700;
   text-align: center;
@@ -238,7 +243,6 @@
 }
 
 .product-toolbar > button {
-  color: white;
   background-color: var(--btn-primary-color);
   font-size: 1.2rem;
   font-weight: 700;
@@ -248,20 +252,9 @@
   width: 20%;
 }
 
-.product-toolbar > button:hover {
-  background-color: var(--btn-hover-primary-color);
-  transition: 150ms;
-}
-
-.product-toolbar > button:active {
-  color: var(--main-primary-color);
-  background-color: rgb(168, 161, 197);
-}
-
+/* Footer Styles */
 .footer {
-  color: aliceblue;
   background-color: var(--main-primary-color);
-  font-family: var(--font-primary);
 }
 
 .footer > .container {
@@ -277,15 +270,7 @@
   margin: .5rem 0;
 }
 
-.footer > .container > span a {
-  color: aliceblue;
-  text-decoration: none;
-}
-
-.footer > .container > span a:hover {
-  text-decoration: underline;
-}
-
+/* Media Queries */
 @media (max-width: 1280px) {
   .category {
     justify-content: center;

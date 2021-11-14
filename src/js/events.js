@@ -4,12 +4,15 @@ const showRequestListPopup = () => {
   backgroundPopupStyle = document.querySelector(".background-popup").style;
   headerStyle = document.querySelector(".header").style;
   productsCategoryStyle = document.querySelector(".products-category").style;
+  footerStyle = document.querySelector(".footer").style;
 
   backgroundPopupStyle.backgroundColor = "rgba(0, 0, 0, 0.95)";
   headerStyle.position = "relative";
   headerStyle.zIndex = "-1";
   productsCategoryStyle.position = "relative";
   productsCategoryStyle.zIndex = "-2";
+  footerStyle.position = "relative";
+  footerStyle.zIndex = "-3";
   document.body.style.overflowY = "hidden";
 
   document
