@@ -1,4 +1,16 @@
 let requestItens = {};
+let phoneNumber = 16993179630;
+let requestText = ``;
+
+const requestNow = (phoneNumber, requestText) => {
+  phoneNumber != false
+    ? open(
+        `https://api.whatsapp.com/send?phone=55${phoneNumber}&text=${encodeURIComponent(
+          `${requestText} Endereço: ${addressInput.value}`
+        )}`
+      )
+    : false;
+};
 
 const showRequestListPopup = () => {
   backgroundPopupStyle = document.querySelector(".background-popup").style;
@@ -28,10 +40,18 @@ const showRequestListPopup = () => {
     ) {
       requestItensListContent.innerHTML += `${requestItens[i].itemName} R$${requestItens[i].totalValue} - Qtd: ${requestItens[i].itensQuantity}<br>`;
       itensTotalValue += Number(requestItens[i].totalValue);
+
+      requestText += `${requestItens[i].itemName} R$${requestItens[i].totalValue} - Qtd: ${requestItens[i].itensQuantity}
+      `;
     }
   }
 
   requestTotalValue.innerHTML = `R$${itensTotalValue}`;
+  requestText += `Total: R$${itensTotalValue}`;
+
+  requestNowButton.addEventListener("click", () => {
+    requestNow(phoneNumber, requestText);
+  });
 };
 
 const updateRequestList = (
@@ -93,4 +113,4 @@ const minusOne = (id) => {
   updateValueDisplay(id, productCountValue);
 };
 
-requestButton.addEventListener("click", showRequestListPopup)
+requestButton.addEventListener("click", showRequestListPopup);

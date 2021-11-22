@@ -2,7 +2,7 @@ export const prodCardElement = (name, value, description, image, id) =>  {
   let prodCard = `
   <div class="product-card" id="item${id}">
     <div class="product-image">
-      <img src="${image}" alt="" />
+      <img src="${image}" alt="Imagem de um ${name}" width="100%"/>
     </div>
     <div class="product-name">
       <span>${name}</span>
@@ -18,7 +18,7 @@ export const prodCardElement = (name, value, description, image, id) =>  {
     </div>
     <div class="product-toolbar" id="productToolbar${id}">
       <button onClick="minusOne(${id})">-</button>
-      <input disabled type="text" value="0" id="valueItem${id}" />
+      <input disabled type="text" value="0" id="valueItem${id}" aria-hidden="true"/>
       <button onClick="plusOne(${id})">+</button>
     </div>
   </div>

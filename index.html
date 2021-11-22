@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Cardápio Online">
-    <link rel="shortcut icon" href="./src/icon.jpg" type="image/x-icon" />
+    <link rel='icon' href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍔</text></svg>'>
     <title>CardápioOn</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
       <header class="header">
         <div class="container">
           <span class="logo">
-            <a href="https://gabrieldsrodrigues.github.io/CardapioOn/" target="_blank">
+            <a href="https://gabrieldsrodrigues.github.io/CardapioOn/" target="_blank" rel="noopener noreferrer">
               CardápioOn
             </a>
           </span>
@@ -30,13 +30,13 @@
       <footer class="footer">
         <div class="container">
           <span lang="en">
-            Project Designed and Developed by <strong><a href="https://github.com/GabrielDSRodrigues/CardapioOn" target="_blank">GabrielDSRodrigues</a></strong>
+            Project Designed and Developed by <strong><a href="https://github.com/GabrielDSRodrigues/CardapioOn" target="_blank" rel="noopener noreferrer">GabrielDSRodrigues</a></strong>
           </span>
           <span lang="en">
             This is just a fork re-imaging your project
           </span>
           <span lang="en">
-            Copyright &copy; 2021 <strong><a href="https://github.com/GabrielDSRodrigues" target="_blank">GabrielDSRodrigues</a></strong>. All Rights Reserved
+            Copyright &copy; 2021 <strong><a href="https://github.com/GabrielDSRodrigues" target="_blank" rel="noopener noreferrer">GabrielDSRodrigues</a></strong>. All Rights Reserved
           </span>
         </div>
       </footer>
@@ -53,8 +53,8 @@
               </div>
               <h3>Total</h3>
               <div id="requestTotalValue"></div>
-              <input type="text" placeholder="Seu Endereço"></input>
-              <button>Pedir Agora!</button>
+              <input id="addressInput" type="text" placeholder="Seu Endereço"></input>
+              <button id="requestNowButton">Pedir Agora!</button>
             </div>
           </div>
           `;
@@ -62,7 +62,7 @@
       }
     </script>
     <script type="module" src="./src/js/main.js"></script>
-    <script type="module" src="./src/declare.js"></script>
     <script src="./src/js/events.js"></script>
+    <script type="module" src="./src/declare.js"></script>
   </body>
 </html>
